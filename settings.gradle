@@ -1,0 +1,3 @@
+include ':flowlayout'
+include ':app'
+rootProject.name = "Sample chat"
