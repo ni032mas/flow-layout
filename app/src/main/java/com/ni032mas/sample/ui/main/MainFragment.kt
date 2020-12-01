@@ -37,7 +37,7 @@ class MainFragment : Fragment() {
             editMessage.text = null
         }
         view.findViewById<RecyclerView>(R.id.recycleMessages).apply {
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = LinearLayoutManager(requireContext()).apply { reverseLayout = true }
             adapter = this@MainFragment.adapter
         }
         viewModel.getMessages().observe(viewLifecycleOwner) { messages ->

@@ -14,6 +14,6 @@ class MainViewModel : ViewModel() {
     fun setMessage(text: String) {
         val id = messagesLiveData.value?.size ?: 0
         val messages = (messagesLiveData.value ?: mutableListOf()).apply { add(Message(id, text, "13:13")) }
-        messagesLiveData.postValue(messages)
+        messagesLiveData.postValue(messages.asReversed())
     }
 }
