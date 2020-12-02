@@ -2,6 +2,8 @@
 
 This library allows to implement bubble text messages as in WhatsApp or Telegram.
 
+<img src="media/sample_chat1.gif" alt="Sample1" width="24%"/> <img src="media/sample_chat2.jpg" alt="Sample2" width="24%"/>
+
 ## Installation
 
 FlowLayout is distributed through [Jitpack](https://jitpack.io/#ni032mas/flow-layout).
