@@ -20,6 +20,7 @@ class MainFragment : Fragment() {
 
     private val viewModel: MainViewModel by viewModels()
     private val adapter: MessageAdapter = MessageAdapter()
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,10 +37,16 @@ class MainFragment : Fragment() {
             viewModel.setMessage(editMessage.text.toString())
             editMessage.text = null
         }
-        view.findViewById<RecyclerView>(R.id.recycleMessages).apply {
+        recyclerView = view.findViewById<RecyclerView>(R.id.recycleMessages).apply {
             layoutManager = LinearLayoutManager(requireContext()).apply { reverseLayout = true }
             adapter = this@MainFragment.adapter
         }
+        adapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
+            override fun onChanged() {
+                super.onChanged()
+                recyclerView.scrollToPosition(0)
+            }
+        })
         viewModel.getMessages().observe(viewLifecycleOwner) { messages ->
             adapter.setMessages(messages)
         }
