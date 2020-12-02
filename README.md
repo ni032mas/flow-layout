@@ -26,7 +26,7 @@ __Step 2.__ Add the dependency
 
 ```groovy
 dependencies {
-    implementation 'com.github.ni032mas:flow-layout:Tag'
+    implementation 'com.github.ni032mas:flow-layout:1.0.1'
 }
 ```
 
