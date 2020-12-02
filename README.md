@@ -1,6 +1,38 @@
-# Flow layout library
+# FlowLayout library
+
 This library allows to implement bubble text messages as in WhatsApp or Telegram.
 
+<img src="media/sample_chat1.gif" alt="Sample1" width="24%"/> <img src="media/sample_chat2.jpg" alt="Sample2" width="24%"/>
+
+## Installation
+
+FlowLayout is distributed through [Jitpack](https://jitpack.io/#ni032mas/flow-layout).
+
+To get a Git project into your build:
+
+__Step 1.__ Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+
+```groovy
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+__Step 2.__ Add the dependency
+
+```groovy
+dependencies {
+    implementation 'com.github.ni032mas:flow-layout:1.0.1'
+}
+```
+
+[![](https://jitpack.io/v/ni032mas/flow-layout.svg)](https://jitpack.io/#ni032mas/flow-layout)
+
+## Usage
 
 Wrap view text and view time in a FlowLayout. 
 
@@ -51,7 +83,7 @@ Wrap view text and view time in a FlowLayout.
             tools:text="10:27 AM" />
     </com.ni032mas.flowlayout.FlowLayout>
 ```
-Specify the view text and view time in the properties.
+Specify the viewTextIn for text and viewFlowIn for time in the properties.
 
 ```xml
 <com.ni032mas.flowlayout.FlowLayout
@@ -62,4 +94,6 @@ Specify the view text and view time in the properties.
         android:layout_marginTop="8dp"
         app:viewFlowIn="@+id/textTime"
         app:viewTextIn="@+id/textMessage">
+        ...
+</com.ni032mas.flowlayout.FlowLayout>
 ```
